@@ -7,14 +7,35 @@ export default function AnimalKingdom(props) {
 			`http://res.cloudinary.com/ryanphotos/image/list/animalkingdom.json`
 		);
 		const data = await response.json();
-		// const jeopardyData = data[0];
+
+		const dataArray = data.resources;
+
+		console.log(dataArray[3]);
+
+		dataArray.forEach(element => {
+			console.log(
+				`https://res.cloudinary.com/ryanphotos/image/upload/v` +
+					element.version +
+					`/` +
+					element.public_id +
+					`.jpg`
+			);
+		});
 
 		// setCategory(jeopardyData.category.title.toUpperCase());
 		// setQuestion(jeopardyData.question);
 		// setAnswer(jeopardyData.answer);
 		// setToggle(false);
-
 		console.log(data);
+		// console.log(imageURL);
+
+		console.log(
+			`https://res.cloudinary.com/ryanphotos/image/upload/v` +
+				data.resources[4].version +
+				`/` +
+				data.resources[4].public_id +
+				`.jpg`
+		);
 	};
 
 	getData();
