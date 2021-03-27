@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ImageGallery from 'react-image-gallery';
 
-export default function Home(props) {
+export default function BrevardZoo(props) {
 	const images = [
 		{
 			original:
@@ -11,9 +11,9 @@ export default function Home(props) {
 		},
 		{
 			original:
-				'https://res.cloudinary.com/ryanphotos/image/upload/v1616551204/zoo-pics/central-florida-zoo/boa_web_x1udvq.jpg',
+				'https://res.cloudinary.com/ryanphotos/image/upload/v1616552246/zoo-pics/brevard-zoo/gator_web_dhwgqh.jpg',
 			thumbnail:
-				'https://res.cloudinary.com/ryanphotos/image/upload/v1616551204/zoo-pics/central-florida-zoo/boa_web_x1udvq.jpg'
+				'https://res.cloudinary.com/ryanphotos/image/upload/v1616552246/zoo-pics/brevard-zoo/gator_web_dhwgqh.jpg'
 		},
 		{
 			original:
@@ -23,9 +23,9 @@ export default function Home(props) {
 		},
 		{
 			original:
-				'https://res.cloudinary.com/ryanphotos/image/upload/v1616550233/zoo-pics/animal-kingdom/meerkat_small_kwoya2.jpg',
+				'https://res.cloudinary.com/ryanphotos/image/upload/v1616551878/zoo-pics/brevard-zoo/giraffe_baby_cu_web_kxnv7q.jpg',
 			thumbnail:
-				'https://res.cloudinary.com/ryanphotos/image/upload/v1616550233/zoo-pics/animal-kingdom/meerkat_small_kwoya2.jpg'
+				'https://res.cloudinary.com/ryanphotos/image/upload/v1616551878/zoo-pics/brevard-zoo/giraffe_baby_cu_web_kxnv7q.jpg'
 		},
 		{
 			original:
