@@ -7,14 +7,9 @@ import ColumbusZoo from '../pages/ColumbusZoo';
 
 const routes = [
 	{
-		Component: AnimalKingdom,
-		key: 'Animal Kingdom',
-		path: '/animal-kingdom'
-	},
-	{
-		Component: BrevardZoo,
-		key: 'Brevard Zoo',
-		path: '/brevard-zoo'
+		Component: ColumbusZoo,
+		key: 'Columbus Zoo',
+		path: '/columbus-zoo'
 	},
 	{
 		Component: CentralFlorida,
@@ -22,9 +17,14 @@ const routes = [
 		path: '/central-florida-zoo'
 	},
 	{
-		Component: ColumbusZoo,
-		key: 'Columbus Zoo',
-		path: '/columbus-zoo'
+		Component: BrevardZoo,
+		key: 'Brevard Zoo',
+		path: '/brevard-zoo'
+	},
+	{
+		Component: AnimalKingdom,
+		key: 'Animal Kingdom',
+		path: '/animal-kingdom'
 	},
 	{
 		Component: App,
