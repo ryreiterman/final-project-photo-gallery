@@ -3,6 +3,7 @@ import App from '../pages/App';
 import BrevardZoo from '../pages/BrevardZoo';
 import AnimalKingdom from '../pages/AnimalKingdom';
 import CentralFlorida from '../pages/CentralFlorida';
+import ColumbusZoo from '../pages/ColumbusZoo';
 
 const routes = [
 	{
@@ -19,6 +20,11 @@ const routes = [
 		Component: CentralFlorida,
 		key: 'Central Florida Zoo',
 		path: '/central-florida-zoo'
+	},
+	{
+		Component: ColumbusZoo,
+		key: 'Columbus Zoo',
+		path: '/columbus-zoo'
 	},
 	{
 		Component: App,
