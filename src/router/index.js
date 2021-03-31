@@ -8,7 +8,11 @@ const AppRouter = () => {
 			<NavBar routes={routes} />
 			<Switch>
 				{routes.map(({ Component, key, path }) => (
-					<Route key={key} path={path} component={Component}></Route>
+					<Route
+						key={key}
+						path={path}
+						component={props => <Component page={key} {...props} />}
+					></Route>
 				))}
 			</Switch>
 		</Router>

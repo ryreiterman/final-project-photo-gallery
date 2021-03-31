@@ -3,11 +3,12 @@ import ImageGallery from 'react-image-gallery';
 
 export default function Zoo(props) {
 	const [image, setImage] = useState([]);
+	const [prevLocation, setPrevLocation] = useState('');
 	const [link, setLink] = useState(props.match.params.zoo);
 
 	const getData = async () => {
 		const response = await fetch(
-			`http://res.cloudinary.com/ryanphotos/image/list/${link}.json`
+			`http://res.cloudinary.com/ryanphotos/image/list/${props.match.params.zoo}.json`
 		);
 		const data = await response.json();
 		const dataArray = data.resources;
@@ -34,12 +35,13 @@ export default function Zoo(props) {
 	};
 
 	useEffect(() => {
-		const changeURL = () => {
+		// Run getData only when there is a change to link
+		if (!prevLocation) {
 			getData();
-			setLink(props.match.params.zoo);
-		};
-		changeURL();
-	}, [link, setLink]);
+		} else {
+			setPrevLocation(props.location.key);
+		}
+	}, [props.location.key]);
 
 	return (
 		<div>
