@@ -4,27 +4,33 @@ import BrevardZoo from '../pages/BrevardZoo';
 import AnimalKingdom from '../pages/AnimalKingdom';
 import CentralFlorida from '../pages/CentralFlorida';
 import ColumbusZoo from '../pages/ColumbusZoo';
+import Zoo from '../pages/Zoo';
 
 const routes = [
 	{
+		Component: Zoo,
+		key: 'Zoo',
+		path: '/:zoo'
+	},
+	{
 		Component: ColumbusZoo,
 		key: 'Columbus Zoo',
-		path: '/columbus-zoo'
+		path: '/columbuszoo'
 	},
 	{
 		Component: CentralFlorida,
 		key: 'Central Florida Zoo',
-		path: '/central-florida-zoo'
+		path: '/centralfloridazoo'
 	},
 	{
 		Component: BrevardZoo,
 		key: 'Brevard Zoo',
-		path: '/brevard-zoo'
+		path: '/brevardzoo'
 	},
 	{
 		Component: AnimalKingdom,
 		key: 'Animal Kingdom',
-		path: '/animal-kingdom'
+		path: '/animalkingdom'
 	},
 	{
 		Component: App,
