@@ -1,5 +1,5 @@
 import React from 'react';
-import App from '../pages/App';
+import Home from '../pages/Home';
 import BrevardZoo from '../pages/BrevardZoo';
 import AnimalKingdom from '../pages/AnimalKingdom';
 import CentralFlorida from '../pages/CentralFlorida';
@@ -12,6 +12,11 @@ const routes = [
 		key: 'Zoo',
 		path: '/:zoo'
 	},
+	// {
+	// 	Component: Gatorland,
+	// 	key: 'Gatorland',
+	// 	path: '/gatorland'
+	// },
 	{
 		Component: ColumbusZoo,
 		key: 'Columbus Zoo',
@@ -33,8 +38,8 @@ const routes = [
 		path: '/animalkingdom'
 	},
 	{
-		Component: App,
-		key: 'App',
+		Component: Home,
+		key: 'Home',
 		path: '/'
 	}
 ];

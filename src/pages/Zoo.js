@@ -13,6 +13,9 @@ export default function Zoo(props) {
 		const data = await response.json();
 		const dataArray = data.resources;
 
+		console.log(data);
+		console.log(dataArray);
+
 		const imgURL = dataArray.map(item => {
 			let finalOutput = {
 				original:
