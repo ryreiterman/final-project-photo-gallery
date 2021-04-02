@@ -4,7 +4,7 @@ import GalleryThumbnail from '../components/GalleryThumbnail';
 export default function App(props) {
 	return (
 		<>
-			<GalleryThumbnail />
+			<GalleryThumbnail {...props} />
 		</>
 	);
 }
