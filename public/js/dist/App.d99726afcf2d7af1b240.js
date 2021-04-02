@@ -164,7 +164,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var cloudinary_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! cloudinary-react */ \"./node_modules/cloudinary-react/dist/cloudinary-react.esm.js\");\n/* harmony import */ var _pages_Zoo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/Zoo */ \"./src/pages/Zoo.js\");\n/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config */ \"./src/config.js\");\n/* harmony import */ var _config2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config2 */ \"./src/config2.js\");\n\n\n\n\n\n\n\nconst GalleryThumbnail = props => {\n  const [gallery, setGallery] = Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useState\"])(props.match.params.zoo); // const galleries = ['/animalkingdom', '/brevardzoo', '/columbuszoo'];\n  // console.log(galleries);\n  // useEffect(() => {\n  // \t// Immediately Invoked Function Expression\n  // \t(async () => {\n  // \t\ttry {\n  // \t\t\tconst response = await fetch(\n  // \t\t\t\t`https://` +\n  // \t\t\t\t\tconfig2.apiKey +\n  // \t\t\t\t\t`:` +\n  // \t\t\t\t\tconfig.apiKey +\n  // \t\t\t\t\t`@api.cloudinary.com/v1_1/ryanphotos/tags/image`\n  // \t\t\t);\n  // \t\t\tconst data = await response.json();\n  // \t\t\tconsole.log(data);\n  // \t\t\t// setGallery(data);\n  // \t\t} catch (error) {\n  // \t\t\tconsole.error(error);\n  // \t\t}\n  // \t})();\n  // }, []);\n\n  return (\n    /*#__PURE__*/\n    // <nav className=\"NavBar\">\n    // \t{props.routes.map(({ key, path }) => (\n    // \t\t<Link key={key} to={path}>\n    // \t\t\t{key}\n    // \t\t</Link>\n    // \t))}\n    // </nav>\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n      className: \"thumbnail-container\"\n    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"a\", {\n      href: \"/animalkingdom\"\n    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"img\", {\n      src: \"https://res.cloudinary.com/ryanphotos/image/upload/v1616550233/zoo-pics/animal-kingdom/tiger_headon_small_wp7jnk.jpg\",\n      className: \"thumbnail\"\n    }))))\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"a\"] = (GalleryThumbnail);\n\n//# sourceURL=webpack:///./src/components/GalleryThumbnail.js?");
+eval("/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n // import { Link } from 'react-router-dom';\n// import { Image } from 'cloudinary-react';\n// import Zoo from '../pages/Zoo';\n// import config from '../config';\n// import config2 from '../config2';\n\nconst GalleryThumbnail = props => {\n  const [gallery, setGallery] = Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useState\"])(props.match.params.zoo); // const galleries = ['/animalkingdom', '/brevardzoo', '/columbuszoo'];\n  // console.log(galleries);\n  // useEffect(() => {\n  // \t// Immediately Invoked Function Expression\n  // \t(async () => {\n  // \t\ttry {\n  // \t\t\tconst response = await fetch(\n  // \t\t\t\t`https://` +\n  // \t\t\t\t\tconfig2.apiKey +\n  // \t\t\t\t\t`:` +\n  // \t\t\t\t\tconfig.apiKey +\n  // \t\t\t\t\t`@api.cloudinary.com/v1_1/ryanphotos/tags/image`\n  // \t\t\t);\n  // \t\t\tconst data = await response.json();\n  // \t\t\tconsole.log(data);\n  // \t\t\t// setGallery(data);\n  // \t\t} catch (error) {\n  // \t\t\tconsole.error(error);\n  // \t\t}\n  // \t})();\n  // }, []);\n\n  return (\n    /*#__PURE__*/\n    // <nav className=\"NavBar\">\n    // \t{props.routes.map(({ key, path }) => (\n    // \t\t<Link key={key} to={path}>\n    // \t\t\t{key}\n    // \t\t</Link>\n    // \t))}\n    // </nav>\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n      className: \"thumbnail-container\"\n    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"a\", {\n      href: \"/animalkingdom\"\n    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"img\", {\n      src: \"https://res.cloudinary.com/ryanphotos/image/upload/v1616550233/zoo-pics/animal-kingdom/tiger_headon_small_wp7jnk.jpg\",\n      className: \"thumbnail\"\n    }))))\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"a\"] = (GalleryThumbnail);\n\n//# sourceURL=webpack:///./src/components/GalleryThumbnail.js?");
 
 /***/ }),
 
@@ -178,30 +178,6 @@ eval("/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_re
 
 "use strict";
 eval("/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\n\n\n\nconst NavBar = props => {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"nav\", {\n    className: \"NavBar\"\n  }, props.routes.map((_ref) => {\n    let {\n      key,\n      path\n    } = _ref;\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[/* Link */ \"b\"], {\n      key: key,\n      to: path\n    }, key);\n  }));\n};\n\n/* harmony default export */ __webpack_exports__[\"a\"] = (NavBar);\n\n//# sourceURL=webpack:///./src/components/NavBar.js?");
-
-/***/ }),
-
-/***/ "./src/config.js":
-/*!***********************!*\
-  !*** ./src/config.js ***!
-  \***********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("const config = {\n  apiKey: 'JExapw3F9xW9oDhvvmg5STsvKYI'\n};\n/* unused harmony default export */ var _unused_webpack_default_export = (config);\n\n//# sourceURL=webpack:///./src/config.js?");
-
-/***/ }),
-
-/***/ "./src/config2.js":
-/*!************************!*\
-  !*** ./src/config2.js ***!
-  \************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("const config2 = {\n  apiKey: '334395338162792'\n};\n/* unused harmony default export */ var _unused_webpack_default_export = (config2);\n\n//# sourceURL=webpack:///./src/config2.js?");
 
 /***/ }),
 

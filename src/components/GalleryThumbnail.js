@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Image } from 'cloudinary-react';
-import Zoo from '../pages/Zoo';
-import config from '../config';
-import config2 from '../config2';
+// import { Link } from 'react-router-dom';
+// import { Image } from 'cloudinary-react';
+// import Zoo from '../pages/Zoo';
+// import config from '../config';
+// import config2 from '../config2';
 
 const GalleryThumbnail = props => {
 	const [gallery, setGallery] = useState(props.match.params.zoo);
