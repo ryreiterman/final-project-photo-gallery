@@ -2,19 +2,10 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 8000;
-const mongoose = require('mongoose');
 const path = require('path');
+const axios = require('axios')
 
-const MONGODB_URI = process.env.MONGODB_URI
-const db = mongoose.connection;
 
-mongoose.connect(MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
-db.on('open', () => {
-    console.log('Mongo is Connected');
-});
 /* Middleware */
 app.use(express.json());
 if (process.env.NODE_ENV !== 'development'){
@@ -22,11 +13,31 @@ if (process.env.NODE_ENV !== 'development'){
 }
 
 /* Controller Goes Here Remove the tes*/
-app.get('/test', (req, res)=>{
-	res.status(200).json({
-		website: 'My Website',
-		info: 'Not that much'
-	})
+// app.get('/test', (req, res)=>{
+// 	res.status(200).json({
+// 		website: 'My Website',
+// 		info: 'Not that much'
+// 	})
+// })
+
+app.get('/api/tags', async(req, res) => {
+	try {
+		const response = await axios.get(
+			`https://` +
+				process.env.APIKEY +
+				`:` +
+				process.env.APIKEYSECRET +
+				`@api.cloudinary.com/v1_1/ryanphotos/tags/image`
+		);
+				const data = response.data;
+				res
+					.status(200)
+					.json(data)
+
+	} catch (err) {
+		console.error(err)
+		res.json(err)
+	}
 })
 /* Controller Ends here */
 //LISTENER
