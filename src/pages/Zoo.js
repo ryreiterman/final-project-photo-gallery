@@ -5,6 +5,7 @@ export default function Zoo(props) {
 	const [image, setImage] = useState([]);
 	const [prevLocation, setPrevLocation] = useState('');
 	const [link, setLink] = useState(props.match.params.zoo);
+	const firstimage = [];
 
 	const getData = async () => {
 		const response = await fetch(
@@ -33,7 +34,6 @@ export default function Zoo(props) {
 			};
 			return finalOutput;
 		});
-		console.log(imgURL[0].thumbnail);
 
 		setImage(imgURL);
 	};

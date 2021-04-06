@@ -11,9 +11,11 @@ const GalleryThumbnail = props => {
 	const [gallery, setGallery] = useState([]);
 	const [galleryImage, setGalleryImage] = useState([]);
 	const galleryArray = [];
-
-	// const galleries = ['/animalkingdom', '/brevardzoo', '/columbuszoo'];
-	// console.log(galleries);
+	let newArray = [];
+	// const thumbnailArray = [
+	//         'https://res.cloudinary.com/ryanphotos/image/upload/v1616550233/zoo-pics/animal-kingdom/tiger_headon_small_wp7jnk.jpg',
+	//         'https://res.cloudinary.com/ryanphotos/image/upload/v1616552557/zoo-pics/brevard-zoo/vulture_web_xegfeh.jpg'
+	// 	];
 
 	useEffect(() => {
 		// Immediately Invoked Function Expression
@@ -34,8 +36,8 @@ const GalleryThumbnail = props => {
 
 	const getImage = async () => {
 		const galleryImageMap = () => {
-			const newArray = galleryArray.map((tag, index) => {
-				return `http://res.cloudinary.com/ryanphotos/image/list/${tag[0][index]}.json`;
+			newArray = galleryArray[0].map(tag => {
+				return `http://res.cloudinary.com/ryanphotos/image/list/${tag}.json`;
 			});
 			console.log(newArray);
 		};
@@ -43,7 +45,7 @@ const GalleryThumbnail = props => {
 		galleryImageMap();
 
 		const imageResponse = await fetch(
-			`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[0][5]}.json`
+			`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[0][2]}.json`
 		);
 		const imageData = await imageResponse.json();
 		const imageDataArray = imageData.resources;
