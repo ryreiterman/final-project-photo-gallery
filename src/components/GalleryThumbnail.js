@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 // import { Link } from 'react-router-dom';
 // import { Image } from 'cloudinary-react';
 // import Zoo from '../pages/Zoo';
@@ -8,6 +9,8 @@ import { Link } from 'react-router-dom';
 
 const GalleryThumbnail = props => {
 	const [gallery, setGallery] = useState([]);
+	const [galleryImage, setGalleryImage] = useState([]);
+	const galleryArray = [];
 
 	// const galleries = ['/animalkingdom', '/brevardzoo', '/columbuszoo'];
 	// console.log(galleries);
@@ -20,31 +23,64 @@ const GalleryThumbnail = props => {
 				const data = await response.json();
 				console.log(data.tags[1]);
 				setGallery(data.tags);
+				galleryArray.push(data.tags);
+				console.log(galleryArray[0]);
+				getImage();
 			} catch (error) {
 				console.error(error);
 			}
 		})();
 	}, []);
 
+	const getImage = async () => {
+		const galleryImageMap = () => {
+			const newArray = galleryArray.map((tag, index) => {
+				return `http://res.cloudinary.com/ryanphotos/image/list/${tag[0][index]}.json`;
+			});
+			console.log(newArray);
+		};
+
+		galleryImageMap();
+
+		const imageResponse = await fetch(
+			`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[0][5]}.json`
+		);
+		const imageData = await imageResponse.json();
+		const imageDataArray = imageData.resources;
+
+		console.log(imageData);
+		console.log(imageDataArray[0]);
+
+		const thumbnailURL = imageDataArray.map(item => {
+			let finalThumbnail =
+				`https://res.cloudinary.com/ryanphotos/image/upload/v` +
+				item.version +
+				`/` +
+				item.public_id +
+				`.jpg`;
+
+			return finalThumbnail;
+		});
+		console.log(thumbnailURL[0]);
+
+		setGalleryImage(thumbnailURL[0]);
+	};
+
+	// useEffect(() => {
+	// 	getImage();
+	// }, []);
+
 	return (
-		// <nav className="NavBar">
-		// 	{props.routes.map(({ key, path }) => (
-		// 		<Link key={key} to={path}>
-		// 			{key}
-		// 		</Link>
-		// 	))}
-		// </nav>
 		<>
-			<div className="thumbnail-container">
-				<Link to={`/${gallery[0]}`}>
-					{/* <a href="/animalkingdom"> */}
-					<img
-						src="https://res.cloudinary.com/ryanphotos/image/upload/v1616550233/zoo-pics/animal-kingdom/tiger_headon_small_wp7jnk.jpg"
-						className="thumbnail"
-					/>
-					{/* </a> */}
-				</Link>
-			</div>
+			{gallery.map(tag => {
+				return (
+					<div className="thumbnail-container" key={tag._id}>
+						<Link to={`/${tag}`}>
+							<img src={`${galleryImage}`} className="thumbnail" />
+						</Link>
+					</div>
+				);
+			})}
 		</>
 	);
 };

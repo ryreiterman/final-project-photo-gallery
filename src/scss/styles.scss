@@ -31,20 +31,19 @@ body {
 
 }
 
-.AboutPage {
+.home-wrapper {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto, minmax(200px, 1fr));
+  // justify-content: center;
+ 
 
 }
 
-.ContactPage{
-
-}
-
-.AppPage {
-
-}
 
 .thumbnail-container {
-  margin: 2em;
+  
+ 
 }
 
 .thumbnail {

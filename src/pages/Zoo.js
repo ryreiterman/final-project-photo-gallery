@@ -33,6 +33,7 @@ export default function Zoo(props) {
 			};
 			return finalOutput;
 		});
+		console.log(imgURL[0].thumbnail);
 
 		setImage(imgURL);
 	};
