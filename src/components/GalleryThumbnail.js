@@ -76,34 +76,63 @@ const GalleryThumbnail = props => {
 		]);
 
 		setThumbnails(promiseResponseArray);
+		console.log(promiseResponseArray);
+		console.log(promiseResponseArray[1].resources[0].public_id);
 
-		const imageResponse = await fetch(
-			`https://res.cloudinary.com/ryanphotos/image/list/${galleryArray[3]}.json`
-		);
-		const imageData = await imageResponse.json();
-		const imageDataArray = imageData.resources;
+		///////////////// After Arthur help code ///////////////////////////
 
-		console.log(imageData);
-		console.log(imageDataArray[0]);
+		// const thumbnailURL = thumbnails.map(async (item, index) => {
+		// 	let finalThumbnail =
+		// 		`https://res.cloudinary.com/ryanphotos/image/upload/v` +
+		// 		item.resources[index].version +
+		// 		`/` +
+		// 		item.resources[index].public_id +
+		// 		`.jpg`;
 
-		const thumbnailURL = imageDataArray.map(item => {
-			let finalThumbnail =
-				`https://res.cloudinary.com/ryanphotos/image/upload/v` +
-				item.version +
-				`/` +
-				item.public_id +
-				`.jpg`;
+		// 	return finalThumbnail;
+		// });
 
-			return finalThumbnail;
-		});
-		console.log(thumbnailURL[0]);
+		// console.log(thumbnailURL);
 
-		setGalleryImage(thumbnailURL[0]);
+		const thumbnailURL = await Promise.all([
+			...thumbnails.map(async (item, index) => {
+				let finalThumbnail =
+					`https://res.cloudinary.com/ryanphotos/image/upload/v` +
+					item[index].resources[0].version +
+					`/` +
+					item[index].resources[0].public_id +
+					`.jpg`;
+
+				return finalThumbnail;
+			})
+		]);
+
+		setGalleryImage(thumbnailURL);
+		console.log(thumbnailURL);
+
+		// const imageResponse = await fetch(
+		// 	`https://res.cloudinary.com/ryanphotos/image/list/${galleryArray[3]}.json`
+		// );
+		// const imageData = await imageResponse.json();
+		// const imageDataArray = imageData.resources;
+
+		// console.log(imageData);
+		// console.log(imageDataArray[0]);
+
+		// const thumbnailURL = imageDataArray.map(item => {
+		// 	let finalThumbnail =
+		// 		`https://res.cloudinary.com/ryanphotos/image/upload/v` +
+		// 		item.version +
+		// 		`/` +
+		// 		item.public_id +
+		// 		`.jpg`;
+
+		// 	return finalThumbnail;
+		// });
+		// console.log(thumbnailURL[0]);
+
+		// setGalleryImage(thumbnailURL[0]);
 	};
-
-	// useEffect(() => {
-	// 	getImage();
-	// }, []);
 
 	return (
 		<>
