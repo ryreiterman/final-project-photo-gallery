@@ -9,7 +9,7 @@ export default function Zoo(props) {
 
 	const getData = async () => {
 		const response = await fetch(
-			`http://res.cloudinary.com/ryanphotos/image/list/${props.match.params.zoo}.json`
+			`https://res.cloudinary.com/ryanphotos/image/list/${props.match.params.zoo}.json`
 		);
 		const data = await response.json();
 		const dataArray = data.resources;

@@ -38,7 +38,7 @@ const GalleryThumbnail = props => {
 	const getImage = async galleryArray => {
 		const galleryImageMap = () => {
 			const newArray = galleryArray.map(tag => {
-				return `http://res.cloudinary.com/ryanphotos/image/list/${tag}.json`;
+				return `https://res.cloudinary.com/ryanphotos/image/list/${tag}.json`;
 			});
 			console.log(newArray);
 		};
@@ -47,25 +47,25 @@ const GalleryThumbnail = props => {
 
 		const galleryPromise = await Promise.all([
 			fetch(
-				`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[0]}.json`
+				`https://res.cloudinary.com/ryanphotos/image/list/${galleryArray[0]}.json`
 			),
 			fetch(
-				`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[1]}.json`
+				`https://res.cloudinary.com/ryanphotos/image/list/${galleryArray[1]}.json`
 			),
 			fetch(
-				`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[2]}.json`
+				`https://res.cloudinary.com/ryanphotos/image/list/${galleryArray[2]}.json`
 			),
 			fetch(
-				`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[3]}.json`
+				`https://res.cloudinary.com/ryanphotos/image/list/${galleryArray[3]}.json`
 			),
 			fetch(
-				`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[4]}.json`
+				`https://res.cloudinary.com/ryanphotos/image/list/${galleryArray[4]}.json`
 			),
 			fetch(
-				`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[5]}.json`
+				`https://res.cloudinary.com/ryanphotos/image/list/${galleryArray[5]}.json`
 			),
 			fetch(
-				`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[6]}.json`
+				`https://res.cloudinary.com/ryanphotos/image/list/${galleryArray[6]}.json`
 			)
 		]);
 
@@ -78,7 +78,7 @@ const GalleryThumbnail = props => {
 		setThumbnails(promiseResponseArray);
 
 		const imageResponse = await fetch(
-			`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[3]}.json`
+			`https://res.cloudinary.com/ryanphotos/image/list/${galleryArray[3]}.json`
 		);
 		const imageData = await imageResponse.json();
 		const imageDataArray = imageData.resources;
