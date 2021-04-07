@@ -1,15 +1,18 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Roboto&display=swap");
 @import "reset";
 @import "grid";
 @import "node_modules/react-image-gallery/styles/scss/image-gallery.scss";
 
 body {
   font-size: 16px;
+  
 }
 
 .page-title {
   text-align: center;
-  padding: .5em;
+  padding: .3em;
+  font-family: 'Comfortaa', cursive;
+  
 }
 
 .NavBar {
@@ -20,6 +23,7 @@ body {
   background-color: #4f5d75;
   margin-bottom: .4em;
   padding: .5em;
+  font-family: 'Roboto', sans-serif;
 }
 
 .NavBar a {
@@ -39,7 +43,7 @@ body {
 .home-wrapper {
   display: flex;
   flex-wrap: wrap;
-  padding: 1.5em;
+  padding: 1em;
   
 }
 

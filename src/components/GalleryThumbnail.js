@@ -10,7 +10,8 @@ import { Link } from 'react-router-dom';
 const GalleryThumbnail = props => {
 	const [gallery, setGallery] = useState([]);
 	const [galleryImage, setGalleryImage] = useState([]);
-	const galleryArray = [];
+	const [galleryArray, setGalleryArray] = useState([]);
+	const [thumbnails, setThumbnails] = useState([]);
 	let newArray = [];
 	// const thumbnailArray = [
 	//         'https://res.cloudinary.com/ryanphotos/image/upload/v1616550233/zoo-pics/animal-kingdom/tiger_headon_small_wp7jnk.jpg',
@@ -25,18 +26,18 @@ const GalleryThumbnail = props => {
 				const data = await response.json();
 				console.log(data.tags[1]);
 				setGallery(data.tags);
-				galleryArray.push(data.tags);
-				console.log(galleryArray[0]);
-				getImage();
+				setGalleryArray([...data.tags]);
+				console.log(galleryArray);
+				await getImage(data.tags);
 			} catch (error) {
 				console.error(error);
 			}
 		})();
 	}, []);
 
-	const getImage = async () => {
+	const getImage = async galleryArray => {
 		const galleryImageMap = () => {
-			newArray = galleryArray[0].map(tag => {
+			const newArray = galleryArray.map(tag => {
 				return `http://res.cloudinary.com/ryanphotos/image/list/${tag}.json`;
 			});
 			console.log(newArray);
@@ -44,8 +45,40 @@ const GalleryThumbnail = props => {
 
 		galleryImageMap();
 
+		const galleryPromise = await Promise.all([
+			fetch(
+				`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[0]}.json`
+			),
+			fetch(
+				`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[1]}.json`
+			),
+			fetch(
+				`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[2]}.json`
+			),
+			fetch(
+				`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[3]}.json`
+			),
+			fetch(
+				`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[4]}.json`
+			),
+			fetch(
+				`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[5]}.json`
+			),
+			fetch(
+				`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[6]}.json`
+			)
+		]);
+
+		const promiseResponseArray = await Promise.all([
+			...galleryPromise.map(async response => {
+				return response.json();
+			})
+		]);
+
+		setThumbnails(promiseResponseArray);
+
 		const imageResponse = await fetch(
-			`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[0][2]}.json`
+			`http://res.cloudinary.com/ryanphotos/image/list/${galleryArray[3]}.json`
 		);
 		const imageData = await imageResponse.json();
 		const imageDataArray = imageData.resources;
