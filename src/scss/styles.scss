@@ -32,18 +32,15 @@ body {
 }
 
 .home-wrapper {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto, minmax(200px, 1fr));
-  // justify-content: center;
- 
-
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.5em;
+  
 }
 
 
 .thumbnail-container {
-  
- 
+
 }
 
 .thumbnail {
@@ -52,6 +49,7 @@ body {
   border-radius: 1em;
   object-fit: cover;
   transition: .5s ease;
+  margin: .5em;
 }
 
 .thumbnail-container a:hover {
