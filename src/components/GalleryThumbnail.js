@@ -59,6 +59,9 @@ const GalleryThumbnail = props => {
 			),
 			fetch(
 				`https://res.cloudinary.com/ryanphotos/image/list/${galleryArray[8]}.json`
+			),
+			fetch(
+				`https://res.cloudinary.com/ryanphotos/image/list/${galleryArray[9]}.json`
 			)
 		]);
 
