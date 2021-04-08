@@ -6,6 +6,7 @@ const GalleryThumbnail = props => {
 	const [galleryImage, setGalleryImage] = useState([]);
 	const [galleryArray, setGalleryArray] = useState([]);
 	const [thumbnails, setThumbnails] = useState([]);
+	const [title, setTitle] = useState([]);
 
 	useEffect(() => {
 		// Immediately Invoked Function Expression
@@ -52,6 +53,9 @@ const GalleryThumbnail = props => {
 			),
 			fetch(
 				`https://res.cloudinary.com/ryanphotos/image/list/${galleryArray[6]}.json`
+			),
+			fetch(
+				`https://res.cloudinary.com/ryanphotos/image/list/${galleryArray[7]}.json`
 			)
 		]);
 
@@ -75,16 +79,26 @@ const GalleryThumbnail = props => {
 		});
 
 		setGalleryImage(thumbnailURL);
+
+		const mapTitle = promiseResponseArray.map((item, index) => {
+			let grabTitle = item.resources[index].context.custom.title;
+			return grabTitle;
+		});
+
+		setTitle(mapTitle);
 	};
 
 	return (
 		<>
-			{gallery.length && galleryImage.length
+			{gallery.length && galleryImage.length && title.length
 				? gallery.map((tag, index) => {
 						return (
 							<div className="thumbnail-container" key={tag._id}>
 								<Link to={`/${tag}`}>
 									<img src={`${galleryImage[index]}`} className="thumbnail" />
+									<div className="overlay">
+										<div className="gallery-title">{`${title[index]}`}</div>
+									</div>
 								</Link>
 							</div>
 						);

@@ -24,6 +24,7 @@ body {
   margin-bottom: .4em;
   padding: .5em;
   font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
 }
 
 .NavBar a {
@@ -43,25 +44,59 @@ body {
 .home-wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding: 1em;
   
 }
 
 
 .thumbnail-container {
+  position: relative;
 
 }
 
 .thumbnail {
-  width: 300px;
-  height: 300px;
+  width: 600px;
+  height: 400px;
   border-radius: 1em;
   object-fit: cover;
   transition: .5s ease;
   margin: .5em;
 }
 
-.thumbnail-container a:hover {
+.thumbnail-container a:hover .overlay {
   opacity: .85;
   transition: .5s ease;
+}
+
+// .thumbnail-container:hover .overlay {
+//   opacity: 1;
+// }
+
+.gallery-title {
+  // display: none;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #4f5d75;
+  border-radius: 1em;
 }
