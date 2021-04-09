@@ -1,4 +1,12 @@
-# Ryan Reiterman's Final Project
+<h1 align="center">Ryan Reiterman's Final Project</h1>
+
+<p align="center">
+<img src="https://media-exp1.licdn.com/dms/image/C4D03AQFdqdEy9vlRSg/profile-displayphoto-shrink_200_200/0/1540666917092?e=1623283200&v=beta&t=5-zTkA1L1PuuFfjFMVUZrLHg7d3WfWYtqlPwkuxS1eo" alt="Ryan Reiterman profile pic" />
+</p>
+
+<p align="center">LinkedIn: <a href="https://www.linkedin.com/in/ryanreiterman/">linkedin.com/in/ryanreiterman</a></p>
+<p align="center">Email: <a href = "mailto: ryreiterman@gmail.com">ryreiterman@gmail.com</a></p>
+
 
 ## Title
 Ryan's Super Cool Photo Galleries
