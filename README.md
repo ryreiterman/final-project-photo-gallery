@@ -24,5 +24,15 @@ I've been an avid photographer for more than 10 years, and I've always wanted to
 
 <figcaption>Mobile demo</figcaption>
 
-![Gallery demo](https://res.cloudinary.com/ryanphotos/image/upload/v1617935627/demos/final_project_iyo2vs.gif)
+![Gallery mobile demo](https://res.cloudinary.com/ryanphotos/image/upload/v1617935627/demos/final_project_iyo2vs.gif)
+
+## Technologies Used
+
+* HTML, CSS, JavaScript, JSX, React, Node.js, Heroku
+
+* [Big Poppa React Starter Code](https://www.npmjs.com/package/big-poppa-code-react-starter)
+
+* [React Carousel Image Gallery](https://www.npmjs.com/package/react-image-gallery)
+
+* [Cloudinary](https://cloudinary.com/)
 
