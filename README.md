@@ -37,7 +37,19 @@ https://final-project-photo-gallery.herokuapp.com/
 
 ## Technologies Used
 
-* HTML, CSS, JavaScript, JSX, React, Node.js, Heroku
+* HTML
+
+* CSS
+
+* JavaScript
+
+* JSX
+
+* React
+
+* Node.js
+
+* Heroku
 
 * [Big Poppa React Starter Code](https://www.npmjs.com/package/big-poppa-code-react-starter)
 
