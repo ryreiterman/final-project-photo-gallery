@@ -93,6 +93,8 @@ https://final-project-photo-gallery.herokuapp.com/
 
 * Getting some of the data from Cloudinary seemed to be very complicated. There is probably an easier way to make certain API calls, so I need to spend more time reading the documentation
 
+* File sizes for thumbnail images are too large
+
 ## Features I Want to Add
 
 * Randomly display the galleries

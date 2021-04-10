@@ -2,14 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const GalleryThumbnail = props => {
+	/// Returns array tag names from Cloudinary ///
 	const [gallery, setGallery] = useState([]);
+	/// Returns array of image urls from each gallery from Cloudinary based on index number ///
 	const [galleryImage, setGalleryImage] = useState([]);
+	/// Returns array tag names from Cloudinary ///
 	const [galleryArray, setGalleryArray] = useState([]);
+	/// Returns array of objects from Cloudinary with data on every image from every gallery ///
 	const [thumbnails, setThumbnails] = useState([]);
+	/// Returns array of the title from each gallery ///
 	const [title, setTitle] = useState([]);
 
+	/// Immediately Invoked Function Expression that fetches the tags from Cloudinary ///
+	/// Passes those tags to setGalleryArray and getImage function ///
 	useEffect(() => {
-		// Immediately Invoked Function Expression
 		(async () => {
 			try {
 				const response = await fetch('/api/tags');
@@ -22,6 +28,8 @@ const GalleryThumbnail = props => {
 			}
 		})();
 	}, []);
+
+	/// Map over array of tags, insert tag into JSON url, fetch data, returns array of data from each gallery (Cloudinary limit is 10) ///
 
 	const getImage = async galleryArray => {
 		const galleryImageMap = () => {
@@ -73,6 +81,8 @@ const GalleryThumbnail = props => {
 
 		setThumbnails(promiseResponseArray);
 
+		/// Maps over JSON from each gallery and returns an image from the gallery based on the index number ///
+
 		const thumbnailURL = promiseResponseArray.map(item => {
 			let finalThumbnail =
 				`https://res.cloudinary.com/ryanphotos/image/upload/v` +
@@ -85,6 +95,8 @@ const GalleryThumbnail = props => {
 		});
 
 		setGalleryImage(thumbnailURL);
+
+		/// Map over gallery data and return the title from each gallery to use on gallery thumbnails ///
 
 		const mapTitle = promiseResponseArray.map((item, index) => {
 			let grabTitle = item.resources[index].context.custom.title;
