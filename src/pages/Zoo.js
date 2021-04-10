@@ -7,6 +7,8 @@ export default function Zoo(props) {
 	const [link, setLink] = useState(props.match.params.zoo);
 	const firstimage = [];
 
+	/// getData fetches gallery based on tag name ///
+
 	const getData = async () => {
 		const response = await fetch(
 			`https://res.cloudinary.com/ryanphotos/image/list/${props.match.params.zoo}.json`
@@ -14,8 +16,7 @@ export default function Zoo(props) {
 		const data = await response.json();
 		const dataArray = data.resources;
 
-		console.log(data);
-		console.log(dataArray);
+		/// Map over gallery data and get image urls for main gallery images and thumbnails ///
 
 		const imgURL = dataArray.map(item => {
 			let finalOutput = {
