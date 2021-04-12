@@ -7,7 +7,7 @@ export default function Zoo(props) {
 	const [link, setLink] = useState(props.match.params.zoo);
 	const firstimage = [];
 
-	/// getData fetches gallery based on tag name ///
+	/// getData fetches gallery images based on tag name ///
 
 	const getData = async () => {
 		const response = await fetch(

@@ -27,7 +27,7 @@ app.get('/api/tags', async(req, res) => {
 				process.env.APIKEY +
 				`:` +
 				process.env.APIKEYSECRET +
-				`@api.cloudinary.com/v1_1/ryanphotos/tags/image`
+				`@api.cloudinary.com/v1_1/ryanphotos/tags/image?max_results=100`
 		);
 				const data = response.data;
 				res
